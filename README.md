@@ -1,19 +1,16 @@
-# Laboration 4 – Databas (DT207G Backend-baserad webbutveckling)
+# Projektuppgift – Databas - Programmering i TypeScript, DT208G
 
 **Genomförd av: joha2102**
 
-Länk till API:t: https://bbw-labb-4-db.onrender.com
+Länk till API:t: kommer
 
 ## Projektbeskrivning
 
-Detta projekt är del 1 av Laboration 4 i kursen *Backend-baserad webbutveckling*.
+Detta projekt är en del av slutuppgiften i kursen "Programmering i TypeScript" vid Mittuniversitetet. Uppgiften går ut på att skapa en webbplats för ett fiktivt universitet, där det ska gå att lista tillgängliga kurser och skapa ett eget schema av en uppsättning kurser som läses in via en JSON-fil/API.
 
-Syftet är att skapa en webbtjänst som hanterar användarregistrering och inloggning med autentisering via JWT.
+Denna del avser en databas som hanterar användare och sparade kurser.
 
-Jag har valt att bygga en enkel digital dagbok där användare kan skapa och läsa sina egna inlägg bakom inloggning.
-
-Del 2 av uppgiften är en frontend-applikation som finns här:  
-**länk kommer**
+Länk till repot för frontend: 
 
 ## Installation
 
@@ -47,4 +44,4 @@ Install.js kopplar då upp sig mot Renders PostgreSQL och skapar tabellerna.
 
 ### Basrelationer
 User (id (PK), Username, Password, Account_created)
-Entries (id (PK), User_id (FK), Content, Created_at)
+Course (id (PK), User_id (FK), Course_code, Subject_code, Added_at)
