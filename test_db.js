@@ -19,9 +19,9 @@ async function testDb() {
         console.table(users.rows);
 
         // Skriv ut inläggstabell
-        const entries = await client.query("SELECT * FROM entries");
-        console.log("Entries:");
-        console.table(entries.rows);
+        const courses = await client.query("SELECT * FROM courses");
+        console.log("Courses:");
+        console.table(courses.rows);
 
     } catch (error) {
         console.error(error);
