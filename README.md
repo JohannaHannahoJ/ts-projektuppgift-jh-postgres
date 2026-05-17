@@ -44,4 +44,4 @@ Install.js kopplar då upp sig mot Renders PostgreSQL och skapar tabellerna.
 
 ### Basrelationer
 User (id (PK), Username, Password, Account_created)
-Course (id (PK), User_id (FK), Course_code, Course_name, Points, Subject, Added_at)
+Course (id (PK), User_id (FK), Course_code, Course_name, Points, Subject, Syllabus Added_at)
