@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-const entryRoutes = require("./routes/entryRoutes");
+const courseRoutes = require("./routes/courseRoutes");
 const userRoutes = require("./routes/userRoutes");
 
-app.use("/entries", entryRoutes);
+app.use("/courses", courseRoutes);
 app.use("/users", userRoutes);
 
 // Starta applikationen

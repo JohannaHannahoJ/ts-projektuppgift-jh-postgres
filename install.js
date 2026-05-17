@@ -14,6 +14,9 @@ async function install() {
         console.log("Ansluten till Render Postgres");
 
         const sql = `
+
+            DROP TABLE IF EXISTS courses;
+
             CREATE TABLE IF NOT EXISTS users (
                 id SERIAL PRIMARY KEY,
                 username VARCHAR(255) UNIQUE NOT NULL,
@@ -23,14 +26,17 @@ async function install() {
 
             CREATE TABLE IF NOT EXISTS courses (
                 id SERIAL PRIMARY KEY,
-                course_code TEXT NOT NULL,
-                subject_code TEXT NOT NULL,
+                course_code VARCHAR(10) NOT NULL,
+                course_name VARCHAR(100) NOT NULL,
+                points DECIMAL(10,2) NOT NULL,
+                subject VARCHAR(100) NOT NULL,
+                syllabus VARCHAR(100) NOT NULL,
                 added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 user_id INTEGER NOT NULL,
-                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+                CONSTRAINT user_course UNIQUE (course_code,user_id)
             );
 
-            CREATE INDEX user_course ON courses(course_code,user_id);
         `;
 
         await client.query(sql);
