@@ -12,7 +12,7 @@ router.get("/", authenticateToken, async (req, res) => {
         const userId = req.user.id;// användar-id från autentiserad token
 
         const result = await client.query(
-            "SELECT course_code, course_name, points, subject, syllabus FROM courses WHERE user_id = $1 ORDER BY added_at DESC", [userId]
+            'SELECT course_code as "courseCode", course_name as "courseName", points, subject, syllabus FROM courses WHERE user_id = $1 ORDER BY added_at DESC', [userId]
         );
 
         res.json(result.rows);
