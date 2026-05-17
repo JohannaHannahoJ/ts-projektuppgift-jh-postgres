@@ -13,7 +13,7 @@ function authenticateToken(req, res, next) {
     // Verifiera om giltig genom att skicka in token och hemlig nyckel i funktionen
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
         if (err) {
-            return res.status(403).json({ message: "Dogga in, eller skapa konto." });
+            return res.status(403).json({ message: "Logga in, eller skapa konto." });
         }
 
         req.user = user; // skicka med användare i requesten
