@@ -7,7 +7,7 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1]; // plocka ut själva tokenet, ta bort bearer och mellanslag
 
     if (!token) {
-        return res.status(401).json({ message: "You need to send token" });
+        return res.status(401).json({ message: "Logga in, eller skapa konto." });
     }
 
     // Verifiera om giltig genom att skicka in token och hemlig nyckel i funktionen
