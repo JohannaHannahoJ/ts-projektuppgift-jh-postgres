@@ -50,10 +50,10 @@ router.post("/", authenticateToken, async (req, res) => {
 });
 
 // Ta bort kurs
-router.delete("/", authenticateToken, async (req, res) => {
+router.delete("/:courseCode", authenticateToken, async (req, res) => {
     try {
         const userId = req.user.id;
-        const { courseCode } = req.body;
+        const courseCode = req.params.courseCode;
 
         if (!courseCode) {
             return res.status(400).json({ message: "Välj en kurs!" });
